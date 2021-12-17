@@ -1,0 +1,38 @@
+[tool.black]
+line-length = 100
+skip-string-normalization = true
+include = '\.pyi?$'
+exclude = '''
+(
+  /(
+      \.eggs
+    | \.git
+    | \.hg
+    | \.mypy_cache
+    | \.tox
+    | \.venv
+    | _build
+    | buck-out
+    | build
+    | dist
+  )/
+)
+'''
+
+[tool.pyright]
+include = ["src", "tests"]
+exclude = ["**/__pycache__"]
+strictListInference = true
+strictDictionaryInference = true
+strictParameterNoneValue = true
+reportMissingImports = true
+reportMissingTypeStubs = false
+reportUnusedImport = true
+reportUnusedClass = true
+reportUnusedFunction = true
+reportUnusedVariable = true
+reportDuplicateImport = true
+executionEnvironments = [
+  { "root" = "src" },
+  { "root" = "tests", "extraPaths" = [ "src" ] },
+]
