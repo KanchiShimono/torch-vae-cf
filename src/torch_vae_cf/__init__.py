@@ -1,0 +1,1 @@
+from torch_vae_cf.__version__ import __version__
